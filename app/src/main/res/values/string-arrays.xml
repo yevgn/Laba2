@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="books">
+        <item>Братья Карамазовы</item>
+        <item>Портрет Дориана Грея</item>
+        <item>48 законов власти</item>
+        <item>Атлант расправил плечи</item>
+        <item>Поющие в терновнике</item>
+        <item>О дивный новый мир</item>
+        <item>Пролетая над гнездом кукушки</item>
+        <item>Над пропастью во ржи</item>
+        <item>Великий Гэтсби</item>
+        <item>Война и мир</item>
+        <item>Повести Белкина</item>
+        <item>Преступление и наказание</item>
+        <item>1984</item>
+        <item>Мы</item>
+        <item>Так говорил Заратустра</item>
+        <item>Государь</item>
+        <item>Обломов</item>
+        <item>Моби Дик</item>
+        <item>Граф Монте-Кристо. Том 1</item>
+        <item>Граф Монте-Кристо. Том 2</item>
+        <item>Овод</item>
+        <item>Последний человек на земле</item>
+
+    </string-array>
+
+</resources>
