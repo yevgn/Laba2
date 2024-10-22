@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_bookList_to_bookInfo"
             app:destination="@id/bookInfo" />
+        <action
+            android:id="@+id/action_bookList_to_addBook"
+            app:destination="@id/addBook" />
     </fragment>
 
     <fragment
@@ -31,10 +34,21 @@
     <fragment
         android:id="@+id/editBookInfo"
         android:name="ru.antonov.laba2.screens.EditBookInfo"
-        android:label="EditBookInfo" >
+        android:label="EditBookInfo"
+        tools:layout="@layout/fragment_edit_book_info">
         <action
             android:id="@+id/action_editBookInfo_to_bookInfo"
             app:destination="@id/bookInfo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addBook"
+        android:name="ru.antonov.laba2.screens.AddBook"
+        android:label="fragment_add_book"
+        tools:layout="@layout/fragment_add_book" >
+        <action
+            android:id="@+id/action_addBook_to_bookList"
+            app:destination="@id/bookList" />
     </fragment>
 
 </navigation>

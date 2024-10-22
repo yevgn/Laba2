@@ -13,4 +13,6 @@
     <string name="edit_book_genre_label">Введите жанр:</string>
     <string name="save_data_button_label">Сохранить</string>
     <string name="menu_home_item_label">Главная</string>
+    <string name="empty_field_error_text">Остались незаполненные поля</string>
+    <string name="add_book_button_label">Добавить книгу</string>
 </resources>

@@ -16,7 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="horizontal"
-        android:background="@android:color/transparent">
+        android:background="@android:color/transparent"
+        android:padding="2sp">
 
         <TextView
             android:focusable="false"
@@ -35,7 +36,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/delete_button_svgrepo_com" />
+            android:src="@drawable/delete_button_svgrepo_com"
+            android:backgroundTint="@android:color/transparent"/>
 
     </RelativeLayout>
 
