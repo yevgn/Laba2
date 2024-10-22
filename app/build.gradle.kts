@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "ru.antonov.laba2"
-        minSdk = 24
+        minSdk = 34
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

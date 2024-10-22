@@ -45,7 +45,6 @@ class AddBook : Fragment() {
 
             else{
                 val b = Book(name, author, year.toInt(), genre)
-                println("AddBook + ${b.toString()}")
                 dataModel.dataForBookListFromAddBook.value = b
                 Toast.makeText(context, "Книга была добавлена", Toast.LENGTH_SHORT).show()
                 MAIN.navController.navigate(R.id.action_addBook_to_bookList)

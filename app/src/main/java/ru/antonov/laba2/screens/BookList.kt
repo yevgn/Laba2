@@ -1,6 +1,7 @@
 package ru.antonov.laba2.screens
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import ru.antonov.laba2.databinding.FragmentBookListBinding
 import ru.antonov.laba2.datamodel.DataModel
 import ru.antonov.laba2.recycleviewadapter.CustomAdapter
 
+private lateinit var adapter: CustomAdapter
 
 class BookList : Fragment() {
 
@@ -35,8 +37,14 @@ class BookList : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        println("BookList onViewCreated")
+        Log.d(this.javaClass.name, "onViewCreated")
+
         init()
+
+        if(::adapter.isInitialized){
+           update()
+        }
+
     }
 
     private fun init(){
@@ -45,7 +53,7 @@ class BookList : Fragment() {
 
         customAdapter.setItemOnClickListener(object : CustomAdapter.OnClickListener{
             override fun onClick(position: Int, model: Book) {
-                println("Кликнут ${position} элемент" )
+                Log.d(this.javaClass.name, "Кликнут ${position} элемент")
                 dataModel.dataForBookInfo.value = model.copy()
                 MAIN.navController.navigate(R.id.action_bookList_to_bookInfo)
             }
@@ -53,14 +61,15 @@ class BookList : Fragment() {
 
         customAdapter.setDelButtonOnClickListener(object : CustomAdapter.OnClickListener{
             override fun onClick(position: Int, model: Book) {
-                println("Удален ${position} элемент" )
                 customAdapter.getDataList().removeAt(position)
                 customAdapter.notifyItemRemoved(position)
+                Log.d(this.javaClass.name, "Удален ${position} элемент")
 
             }
         })
 
         rv.adapter = customAdapter
+        adapter = customAdapter
 
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rv.layoutManager = layoutManager
@@ -71,39 +80,44 @@ class BookList : Fragment() {
             )
         )
 
-        dataModel.dataForBookListFromAddBook.observe(activity as LifecycleOwner){
-            println("observe data from add book")
-            val adapter = rv.adapter as CustomAdapter
-            val position = if(adapter.itemCount == 0) 0 else adapter.itemCount - 1
-            println("BookInfo + ${it.toString()}")
-            adapter.getDataList().add(position, it)
-            adapter.notifyItemInserted(position)
-            // dataModel.dataForBookListFromAddBook.value = null
-        }
-
-        dataModel.dataForBookListFromEditBookInfo.observe(activity as LifecycleOwner) {
-            val adapter = rv.adapter as CustomAdapter
-            val editedBook = it
-
-            adapter.getDataList()
-                .stream()
-                .filter { it.id == editedBook.id }
-                // Элемент только один! Потому что у каждого элемента уникальный ID
-                .forEach {
-                    it.name = editedBook.name
-                    it.author = editedBook.author
-                    it.year = editedBook.year
-                    it.genre = editedBook.genre
-                }
-
-            adapter.notifyDataSetChanged()
-            // dataModel.dataForBookListFromEditBookInfo.value = null
-        }
-
         val btnAddBook = binding.addBookButton
         btnAddBook.setOnClickListener{
             MAIN.navController.navigate(R.id.action_bookList_to_addBook)
         }
+    }
+
+    private fun update(){
+        dataModel.dataForBookListFromAddBook.observe(activity as LifecycleOwner){
+            Log.d(this.javaClass.name, "observe data")
+
+            it?.let {
+                val position = if(adapter.itemCount == 0) 0 else adapter.itemCount
+                adapter.getDataList().add(position, it)
+                adapter.notifyItemInserted(position)
+                dataModel.dataForBookListFromAddBook.value = null
+            }
+        }
+
+        dataModel.dataForBookListFromEditBookInfo.observe(activity as LifecycleOwner) { data ->
+            Log.d(this.javaClass.name, "observe data")
+
+            data?.let {
+                adapter.getDataList()
+                    .stream()
+                    .filter { it.id == data.id }
+                    // Элемент только один! Потому что у каждого элемента уникальный ID
+                    .forEach{
+                        it.name = data.name
+                        it.author = data.author
+                        it.year = data.year
+                        it.genre = data.genre
+                    }
+
+                adapter.notifyDataSetChanged()
+                dataModel.dataForBookListFromEditBookInfo.value = null
+            }
+        }
+
     }
 
 }
