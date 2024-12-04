@@ -7,6 +7,10 @@ android {
     namespace = "ru.antonov.laba2"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "ru.antonov.laba2"
         minSdk = 34

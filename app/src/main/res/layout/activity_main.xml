@@ -36,7 +36,6 @@
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:navGraph="@navigation/nav_graph"
         android:name="androidx.navigation.fragment.NavHostFragment">
-
     </fragment>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
