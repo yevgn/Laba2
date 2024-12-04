@@ -1,4 +1,4 @@
-package ru.antonov.laba2.screens
+package ru.antonov.laba2.screens.editbook.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,34 +7,36 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.LifecycleOwner
-import ru.antonov.laba2.MAIN
+import ru.antonov.laba2.constant.MAIN
 import ru.antonov.laba2.R
 import ru.antonov.laba2.entity.Book
 import ru.antonov.laba2.databinding.FragmentEditBookInfoBinding
 import ru.antonov.laba2.datamodel.DataModel
+import ru.antonov.laba2.screens.editbook.presenter.Presenter
+import ru.antonov.laba2.screens.editbook.presenter.PresenterImpl
+import ru.antonov.laba2.model.ModelImpl
 
 
-class EditBookInfo : Fragment() {
+class EditBookInfo : Fragment(), ru.antonov.laba2.screens.editbook.view.View {
 
-    lateinit var binding: FragmentEditBookInfoBinding
+    private lateinit var binding: FragmentEditBookInfoBinding
     private val dataModel : DataModel by activityViewModels()
-    private var book: Book? = null
+    private lateinit var book: Book
+    private var presenter: Presenter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentEditBookInfoBinding.inflate(layoutInflater, container, false)
+        presenter = PresenterImpl(this, ModelImpl(), dataModel)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        dataModel.dataForEditBookInfo.observe(activity as LifecycleOwner){
-             book = it
-        }
+        presenter?.loadInfo()
 
         binding.saveDataButton.setOnClickListener {
             val newName = binding.bookNameEt.text.toString()
@@ -43,25 +45,27 @@ class EditBookInfo : Fragment() {
             val newGenre   = binding.bookGenreEt.text.toString()
 
             if(newName.isEmpty() || newAuthor.isEmpty() || newYear.isEmpty()
-                || newGenre.isEmpty()){
-
+                || newGenre.isEmpty()) {
                 Toast.makeText(
                     context, "Остались незаполненные поля", Toast.LENGTH_SHORT
                 ).show()
-
-            }
-
-            else{
-                val editedBook = book?.copy(name =  newName, author = newAuthor,
-                    year = newYear.toInt(), genre = newGenre)
-
-                dataModel.dataForBookInfo.value = editedBook
-                dataModel.dataForBookListFromEditBookInfo.value = editedBook
-
+            } else{
+                val newBook = Book(newName,newAuthor, newYear.toInt(), newGenre )
                 Toast.makeText(context, "Данные были редактированы", Toast.LENGTH_SHORT).show()
-                MAIN.navController.navigate(R.id.action_editBookInfo_to_bookInfo)
+                presenter?.onSaveButtonClick(newBook)
             }
         }
+    }
 
+    override fun saveInfo(b: Book) {
+        book = b
+    }
+
+    override fun getInfo(): Book {
+        return book
+    }
+
+    override fun navigateToBookList() {
+        MAIN.navController.navigate(R.id.action_editBookInfo_to_bookList)
     }
 }

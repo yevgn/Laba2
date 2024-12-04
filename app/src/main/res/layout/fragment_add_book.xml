@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".screens.BookInfo"
+    tools:context=".screens.bookinfo.view.BookInfo"
     android:background="@color/background"
     android:padding="5sp">
 

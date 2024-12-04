@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger
 data class Book(var name: String, var author: String, var year: Int,
             var genre: String) {
 
-     var id: Int = count.incrementAndGet()
+    var id: Int = count.incrementAndGet()
 
     companion object{
         private val count: AtomicInteger = AtomicInteger(0)
