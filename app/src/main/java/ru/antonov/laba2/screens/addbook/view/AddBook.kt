@@ -44,13 +44,9 @@ class AddBook : Fragment(), ru.antonov.laba2.screens.addbook.view.View {
                     context, "Остались незаполненные поля", Toast.LENGTH_SHORT
                 ).show()
             } else{
-                val b = Book(name, author, year.toInt(), genre)
-                presenter?.onSaveButtonClick(b)
+                presenter?.onSaveButtonClick(Book(name, author, year.toInt(), genre))
             }
         }
     }
 
-    override fun navigateToBookList() {
-        MAIN.navController.navigate(R.id.action_addBook_to_bookList)
-    }
 }

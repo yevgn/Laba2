@@ -56,8 +56,4 @@ class EditBookInfo : Fragment(), ru.antonov.laba2.screens.editbook.view.View {
         }
     }
 
-
-    override fun navigateToBookList() {
-        MAIN.navController.navigate(R.id.action_editBookInfo_to_bookList)
-    }
 }

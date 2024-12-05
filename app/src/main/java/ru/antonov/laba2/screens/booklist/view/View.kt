@@ -5,8 +5,4 @@ import ru.antonov.laba2.entity.Book
 
 interface View {
     fun showBooks(bookList: MutableList<Book>)
-
-    fun navigateToInfo()
-
-    fun navigateToAddBook()
 }

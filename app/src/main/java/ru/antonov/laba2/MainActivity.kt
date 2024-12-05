@@ -45,12 +45,4 @@ class MainActivity : AppCompatActivity(), View {
             insets
         }
     }
-
-    override fun navigateToBookList() {
-        navController.navigate(R.id.bookList)
-    }
-
-    override fun popBack() {
-        navController.popBackStack()
-    }
 }

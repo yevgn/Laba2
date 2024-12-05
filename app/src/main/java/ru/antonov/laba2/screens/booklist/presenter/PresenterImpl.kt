@@ -1,5 +1,7 @@
 package ru.antonov.laba2.screens.booklist.presenter
 
+import ru.antonov.laba2.R
+import ru.antonov.laba2.constant.MAIN
 import ru.antonov.laba2.constant.bookList
 import ru.antonov.laba2.screens.booklist.view.View
 import ru.antonov.laba2.datamodel.DataModel
@@ -17,12 +19,12 @@ class PresenterImpl(
     }
 
     override fun onAddButtonClick() {
-        view?.navigateToAddBook()
+        MAIN.navController.navigate(R.id.action_bookList_to_addBook)
     }
 
     override fun onItemClick(b: Book) {
         dataModel.dataForBookInfo.value = b
-        view?.navigateToInfo()
+        MAIN.navController.navigate(R.id.action_bookList_to_bookInfo)
     }
 
     override fun loadDataFromModel() {
