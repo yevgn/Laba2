@@ -26,8 +26,7 @@ class PresenterImpl(
     }
 
     override fun loadDataFromModel() {
-        view?.showBooks(bookList)
+        val dataFromModel = bookList
+        view?.showBooks(dataFromModel)
     }
-
-
 }

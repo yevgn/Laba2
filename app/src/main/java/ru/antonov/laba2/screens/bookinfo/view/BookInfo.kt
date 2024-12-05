@@ -35,8 +35,7 @@ class BookInfo : Fragment(), ru.antonov.laba2.screens.bookinfo.view.View {
         presenter?.loadInfo()
 
         binding.editDataButton.setOnClickListener {
-            val b = presenter?.getInfo()
-            presenter?.onEditButtonClick(b!!)
+            presenter?.onEditButtonClick()
         }
     }
 

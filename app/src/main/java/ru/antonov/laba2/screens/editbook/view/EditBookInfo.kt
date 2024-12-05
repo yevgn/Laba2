@@ -21,7 +21,6 @@ class EditBookInfo : Fragment(), ru.antonov.laba2.screens.editbook.view.View {
 
     private lateinit var binding: FragmentEditBookInfoBinding
     private val dataModel : DataModel by activityViewModels()
-    private lateinit var book: Book
     private var presenter: Presenter? = null
 
     override fun onCreateView(
@@ -57,13 +56,6 @@ class EditBookInfo : Fragment(), ru.antonov.laba2.screens.editbook.view.View {
         }
     }
 
-    override fun saveInfo(b: Book) {
-        book = b
-    }
-
-    override fun getInfo(): Book {
-        return book
-    }
 
     override fun navigateToBookList() {
         MAIN.navController.navigate(R.id.action_editBookInfo_to_bookList)

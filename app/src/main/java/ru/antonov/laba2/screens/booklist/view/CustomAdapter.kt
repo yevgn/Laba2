@@ -73,8 +73,4 @@ class CustomAdapter(bookList: MutableList<Book>) :
         notifyDataSetChanged()
     }
 
-//     fun getDataList(): MutableList<Book> {
-//        return BOOKS
-//     }
-
 }
