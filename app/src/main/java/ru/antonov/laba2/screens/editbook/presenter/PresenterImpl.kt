@@ -1,6 +1,8 @@
 package ru.antonov.laba2.screens.editbook.presenter
 
 import androidx.lifecycle.LifecycleOwner
+import ru.antonov.laba2.R
+import ru.antonov.laba2.constant.MAIN
 import ru.antonov.laba2.datamodel.DataModel
 import ru.antonov.laba2.screens.editbook.view.View
 import ru.antonov.laba2.entity.Book
@@ -16,7 +18,7 @@ class PresenterImpl(
 
     override fun onSaveButtonClick(b: Book) {
         model.putBook(getInfo().name, b)
-        view?.navigateToBookList()
+        MAIN.navController.navigate(R.id.action_editBookInfo_to_bookList)
     }
 
     override fun loadInfo() {

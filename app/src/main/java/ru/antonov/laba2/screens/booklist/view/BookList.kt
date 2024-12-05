@@ -84,12 +84,4 @@ class BookList : Fragment(), ru.antonov.laba2.screens.booklist.view.View {
         adapter.setData(bookList)
     }
 
-    override fun navigateToInfo() {
-        MAIN.navController.navigate(R.id.action_bookList_to_bookInfo)
-    }
-
-    override fun navigateToAddBook() {
-        MAIN.navController.navigate(R.id.action_bookList_to_addBook)
-    }
-
 }

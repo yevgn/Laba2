@@ -39,7 +39,6 @@ class BookInfo : Fragment(), ru.antonov.laba2.screens.bookinfo.view.View {
         }
     }
 
-
     override fun showInfo(b: Book) {
         binding.bookNameTv.text = b.name
         binding.bookAuthorTv.text = b.author
@@ -47,7 +46,4 @@ class BookInfo : Fragment(), ru.antonov.laba2.screens.bookinfo.view.View {
         binding.bookGenreTv.text = b.genre
     }
 
-    override fun navigateToEditInfo() {
-        MAIN.navController.navigate(R.id.action_bookInfo_to_editBookInfo)
-    }
 }

@@ -2,6 +2,7 @@ package ru.antonov.laba2.screens.main.presenter
 
 import android.view.MenuItem
 import ru.antonov.laba2.R
+import ru.antonov.laba2.constant.MAIN
 import ru.antonov.laba2.model.Model
 import ru.antonov.laba2.screens.main.view.View
 
@@ -13,11 +14,11 @@ class PresenterImpl(
 
     override fun onBottomNavigationViewClick(item : MenuItem) {
         if (item.itemId == R.id.home_page_item) {
-            view?.navigateToBookList()
+            MAIN.navController.navigate(R.id.bookList)
         }
     }
 
     override fun onBackButtonClick() {
-        view?.popBack()
+        MAIN.navController.popBackStack()
     }
 }
