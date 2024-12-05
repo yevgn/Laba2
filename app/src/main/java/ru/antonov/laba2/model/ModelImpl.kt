@@ -18,22 +18,22 @@ class ModelImpl : Model {
     }
 
     override fun putBook(id: Int, b: Book) {
-        var book : Book? = findBook { it.id == id }
+        val book : Book? = findBook { it.id == id }
         if(book != null){
-            book = b
-            book.id = id
+            book.name = b.name
+            book.author = b.author
+            book.year = b.year
+            book.genre = b.genre
         }
     }
 
-    // TODO: REWORK
     override fun putBook(name: String, b: Book) {
-        var book : Book? =  findBook { it.name == name }
+        val book : Book? =  findBook { it.name == name }
         if(book != null){
-            deleteBook(name)
-            val id = book.id
-            book = b
-            book.id = id
-            postBook(book)
+            book.name = b.name
+            book.author = b.author
+            book.year = b.year
+            book.genre = b.genre
         }
     }
 

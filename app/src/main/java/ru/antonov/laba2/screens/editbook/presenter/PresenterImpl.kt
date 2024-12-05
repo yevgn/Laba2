@@ -12,16 +12,20 @@ class PresenterImpl(
     private val dataModel: DataModel
 ) : Presenter {
 
+    private lateinit var book: Book
+
     override fun onSaveButtonClick(b: Book) {
-        model.putBook(view!!.getInfo().name, b)
-        view.navigateToBookList()
+        model.putBook(getInfo().name, b)
+        view?.navigateToBookList()
     }
 
     override fun loadInfo() {
         dataModel.dataForEditBookInfo.observe(view?.getViewLifecycleOwner() as LifecycleOwner) {
             it?.let {
-                view.saveInfo(it)
+               book = it
             }
         }
     }
+
+    override fun getInfo(): Book = book
 }

@@ -92,38 +92,4 @@ class BookList : Fragment(), ru.antonov.laba2.screens.booklist.view.View {
         MAIN.navController.navigate(R.id.action_bookList_to_addBook)
     }
 
-    //    private fun update(){
-//        dataModel.dataForBookListFromAddBook.observe(activity as LifecycleOwner){
-//            Log.d(this.javaClass.name, "observe data")
-//
-//            it?.let {
-//                val position = if(adapter.itemCount == 0) 0 else adapter.itemCount
-//                adapter.getDataList().add(position, it)
-//                adapter.notifyItemInserted(position)
-//                //adapter.notifyItemRangeChanged(position, myDataList.size());
-//                dataModel.dataForBookListFromAddBook.value = null
-//            }
-//        }
-//
-//        dataModel.dataForBookListFromEditBookInfo.observe(activity as LifecycleOwner) { data ->
-//            Log.d(this.javaClass.name, "observe data")
-//
-//            data?.let {
-//                adapter.getDataList()
-//                    .stream()
-//                    .filter { it.id == data.id }
-//                    // Элемент только один! Потому что у каждого элемента уникальный ID
-//                    .forEach{
-//                        it.name = data.name
-//                        it.author = data.author
-//                        it.year = data.year
-//                        it.genre = data.genre
-//                    }
-//
-//                adapter.notifyDataSetChanged()
-//                dataModel.dataForBookListFromEditBookInfo.value = null
-//            }
-//        }
-//
-//    }
 }

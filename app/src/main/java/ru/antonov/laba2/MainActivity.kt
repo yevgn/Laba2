@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import ru.antonov.laba2.constant.MAIN
 import ru.antonov.laba2.databinding.ActivityMainBinding
+import ru.antonov.laba2.model.ModelImpl
 import ru.antonov.laba2.screens.main.presenter.Presenter
 import ru.antonov.laba2.screens.main.presenter.PresenterImpl
 import ru.antonov.laba2.screens.main.view.View
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity(), View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        presenter = PresenterImpl(this)
+        presenter = PresenterImpl(this, ModelImpl())
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity(), View {
         binding.backButton.setOnClickListener {
             presenter?.onBackButtonClick()
         }
-        
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

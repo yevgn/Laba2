@@ -21,8 +21,8 @@ class PresenterImpl(
         }
     }
 
-    override fun onEditButtonClick(b: Book) {
-        dataModel.dataForEditBookInfo.value = b.copy()
+    override fun onEditButtonClick() {
+        dataModel.dataForEditBookInfo.value = getInfo().copy()
         view?.navigateToEditInfo()
     }
 

@@ -5,7 +5,7 @@ import ru.antonov.laba2.entity.Book
 interface Presenter {
     fun loadInfo()
 
-    fun onEditButtonClick(b: Book)
+    fun onEditButtonClick()
 
     fun getInfo(): Book
 }
