@@ -18,7 +18,6 @@ import ru.antonov.laba2.model.ModelImpl
 class AddBook : Fragment(), ru.antonov.laba2.screens.addbook.view.View {
 
     private lateinit var binding : FragmentAddBookBinding
-    //private val dataModel : DataModel by activityViewModels()
     private var presenter: Presenter? = null
 
     override fun onCreateView(

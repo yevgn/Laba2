@@ -49,9 +49,8 @@ class EditBookInfo : Fragment(), ru.antonov.laba2.screens.editbook.view.View {
                     context, "Остались незаполненные поля", Toast.LENGTH_SHORT
                 ).show()
             } else{
-                val newBook = Book(newName,newAuthor, newYear.toInt(), newGenre )
                 Toast.makeText(context, "Данные были редактированы", Toast.LENGTH_SHORT).show()
-                presenter?.onSaveButtonClick(newBook)
+                presenter?.onSaveButtonClick(Book(newName,newAuthor, newYear.toInt(), newGenre ))
             }
         }
     }

@@ -2,12 +2,9 @@ package ru.antonov.laba2.screens.booklist.view
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ru.antonov.laba2.R
+import ru.antonov.laba2.databinding.BookListItemBinding
 import ru.antonov.laba2.entity.Book
 
 private var books: MutableList<Book> = mutableListOf()
@@ -22,21 +19,18 @@ class CustomAdapter(bookList: MutableList<Book>) :
         books = bookList
     }
 
-   class CustomViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-       val tvBookName = itemView.findViewById<TextView>(R.id.book_name)
-       val ibDeleteBook = itemView.findViewById<ImageButton>(R.id.delete_book)
+   class CustomViewHolder(val binding: BookListItemBinding) : RecyclerView.ViewHolder(binding.root){
 
        fun setDelButtonOnClickListener(listener: OnClickListener?) {
-           this.ibDeleteBook.setOnClickListener{
+           binding.deleteBook.setOnClickListener{
                listener?.onClick(adapterPosition, books[adapterPosition])
            }
        }
    }
 
    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
-       val view = LayoutInflater.from(parent.context)
-           .inflate(R.layout.book_list_item, parent, false)
-       return CustomViewHolder(view)
+       val binding = BookListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+       return CustomViewHolder(binding)
    }
 
    override fun getItemCount(): Int {
@@ -45,7 +39,7 @@ class CustomAdapter(bookList: MutableList<Book>) :
 
    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
        val item = books[position]
-       holder.tvBookName.text = item.name
+       holder.binding.bookName.text = item.name
 
        holder.itemView.setOnClickListener{
            itemOnClickListener?.onClick(position, books[position])
@@ -72,5 +66,4 @@ class CustomAdapter(bookList: MutableList<Book>) :
         books.addAll(bookList)
         notifyDataSetChanged()
     }
-
 }

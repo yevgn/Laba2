@@ -10,5 +10,4 @@ data class Book(var name: String, var author: String, var year: Int,
     companion object{
         private val count: AtomicInteger = AtomicInteger(0)
     }
-
 }
