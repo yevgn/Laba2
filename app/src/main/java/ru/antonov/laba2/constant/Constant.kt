@@ -1,7 +1,7 @@
 package ru.antonov.laba2.constant
 
 import ru.antonov.laba2.entity.Book
-import ru.antonov.laba2.MainActivity
+import ru.antonov.laba2.screens.main.view.MainActivity
 
 // Ленивая инициализация
 lateinit var MAIN: MainActivity
