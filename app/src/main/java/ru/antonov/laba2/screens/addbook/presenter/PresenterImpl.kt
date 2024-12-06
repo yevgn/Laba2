@@ -12,6 +12,7 @@ class PresenterImpl(
     private val view: View?,
     private val model: Model
 ) : Presenter {
+
     override fun onSaveButtonClick(b: Book) {
         model.postBook(b)
         MAIN.navController.navigate(R.id.action_addBook_to_bookList)

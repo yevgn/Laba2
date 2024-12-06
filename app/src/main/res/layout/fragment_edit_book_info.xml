@@ -32,7 +32,9 @@
         <EditText
             android:id="@+id/book_name_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/book_name_label"
+            android:inputType="text"/>
 
     </LinearLayout>
 
@@ -60,7 +62,9 @@
         <EditText
             android:id="@+id/book_author_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/book_author_label"
+            android:inputType="text"/>
 
     </LinearLayout>
 
@@ -88,7 +92,9 @@
         <EditText
             android:id="@+id/book_year_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="@string/book_year_label"
+            android:inputType="number"/>
 
     </LinearLayout>
 
@@ -115,7 +121,9 @@
         <EditText
             android:id="@+id/book_genre_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/book_genre_label"
+            android:inputType="text"/>
 
     </LinearLayout>
 

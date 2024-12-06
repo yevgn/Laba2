@@ -45,5 +45,4 @@ class BookInfo : Fragment(), ru.antonov.laba2.screens.bookinfo.view.View {
         binding.bookYearTv.text = b.year.toString()
         binding.bookGenreTv.text = b.genre
     }
-
 }
