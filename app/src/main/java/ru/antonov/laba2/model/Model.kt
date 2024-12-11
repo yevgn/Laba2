@@ -7,6 +7,8 @@ interface Model {
 
     fun getBook(id: Int): Book?
 
+    fun getAllBooks(): MutableList<Book>
+
     fun postBook(b: Book)
 
     fun putBook(id: Int, b: Book)

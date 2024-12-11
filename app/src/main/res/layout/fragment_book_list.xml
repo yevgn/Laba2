@@ -16,10 +16,6 @@
         android:background="@color/white"
         android:padding="5sp"/>
 
-
-
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/book_list"
         android:layout_width="match_parent"

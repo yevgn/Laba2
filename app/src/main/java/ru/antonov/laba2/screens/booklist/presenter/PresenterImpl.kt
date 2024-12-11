@@ -2,7 +2,6 @@ package ru.antonov.laba2.screens.booklist.presenter
 
 import ru.antonov.laba2.R
 import ru.antonov.laba2.constant.MAIN
-import ru.antonov.laba2.constant.bookList
 import ru.antonov.laba2.screens.booklist.view.View
 import ru.antonov.laba2.datamodel.DataModel
 import ru.antonov.laba2.entity.Book
@@ -28,7 +27,7 @@ class PresenterImpl(
     }
 
     override fun loadDataFromModel() {
-        val dataFromModel = bookList
+        val dataFromModel = model.getAllBooks()
         view?.showBooks(dataFromModel)
     }
 }

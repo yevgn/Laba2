@@ -1,12 +1,11 @@
 package ru.antonov.laba2.constant
 
 import ru.antonov.laba2.entity.Book
-import ru.antonov.laba2.MainActivity
+import ru.antonov.laba2.screens.main.view.MainActivity
 
 // Ленивая инициализация
 lateinit var MAIN: MainActivity
 
-//  Начальный список книг
 val bookList : MutableList<Book> = mutableListOf(
     Book("Братья Карамазовы", "Федор Достоевский", 1950, "Роман"),
     Book( "Портрет Дориана Грея", "Оскар Уайльд", 1950, "Роман"),
@@ -29,4 +28,3 @@ val bookList : MutableList<Book> = mutableListOf(
     Book( "Граф Монте-Кристо. Том 1", "Александр Дюма", 1950, "Роман"),
     Book( "Граф Монте-Кристо. Том 2", "Александр Дюма", 1950, "Роман")
 )
-

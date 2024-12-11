@@ -1,4 +1,4 @@
-package ru.antonov.laba2
+package ru.antonov.laba2.screens.main.view
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,12 +7,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import ru.antonov.laba2.R
 import ru.antonov.laba2.constant.MAIN
 import ru.antonov.laba2.databinding.ActivityMainBinding
 import ru.antonov.laba2.model.ModelImpl
 import ru.antonov.laba2.screens.main.presenter.Presenter
 import ru.antonov.laba2.screens.main.presenter.PresenterImpl
-import ru.antonov.laba2.screens.main.view.View
 
 class MainActivity : AppCompatActivity(), View {
 
