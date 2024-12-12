@@ -3,16 +3,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="book_name_label">Название:</string>
-    <string name="book_year_label">Год издания:</string>
-    <string name="book_author_label">Автор:</string>
-    <string name="book_genre_label">Жанр:</string>
+    <string name="book_year_label">Объем двигателя:</string>
+    <string name="book_author_label">Скорость:</string>
+    <string name="book_genre_label">Год выпуска:</string>
     <string name="edit_data_button_label">Редактировать данные</string>
     <string name="edit_book_name_label">Введите название:</string>
-    <string name="edit_book_year_label">Введите год издания:</string>
-    <string name="edit_book_author_label">Введите автора:</string>
-    <string name="edit_book_genre_label">Введите жанр:</string>
+    <string name="edit_book_year_label">Введите объем двигателя:</string>
+    <string name="edit_book_author_label">Введите скорость:</string>
+    <string name="edit_book_genre_label">Введите год выпуска:</string>
     <string name="save_data_button_label">Сохранить</string>
     <string name="menu_home_item_label">Главная</string>
     <string name="empty_field_error_text">Остались незаполненные поля</string>
-    <string name="add_book_button_label">Добавить книгу</string>
+    <string name="add_book_button_label">Добавить машину</string>
 </resources>

@@ -1,23 +1,23 @@
 package ru.anastasia.laba2.model
 
-import ru.anastasia.laba2.entity.Book
+import ru.anastasia.laba2.entity.Car
 
 interface Model {
-    fun getBook(name: String): Book?
+    fun getCar(name: String): Car?
 
-    fun getBook(id: Int): Book?
+    fun getCar(id: Int): Car?
 
-    fun getAllBooks(): MutableList<Book>
+    fun getAllCars(): MutableList<Car>
 
-    fun postBook(b: Book)
+    fun postCar(b: Car)
 
-    fun putBook(id: Int, b: Book)
+    fun putCar(id: Int, b: Car)
 
-    fun putBook(name: String, b: Book)
+    fun putCar(name: String, b: Car)
 
-    fun deleteBook(id: Int)
+    fun deleteCar(id: Int)
 
-    fun deleteBook(name: String)
+    fun deleteCar(name: String)
 
-    fun deleteBook(b: Book)
+    fun deleteCar(b: Car)
 }

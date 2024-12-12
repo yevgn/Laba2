@@ -3,52 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/bookList">
-
+    app:startDestination="@id/carList">
     <fragment
-        android:id="@+id/bookList"
-        android:name="ru.anastasia.laba2.screens.booklist.view.BookList"
-        android:label="fragment_book_list"
-        tools:layout="@layout/fragment_book_list" >
+        android:id="@+id/carList"
+        android:name="ru.anastasia.laba2.screens.carlist.view.CarList"
+        android:label="fragment_car_list"
+        tools:layout="@layout/fragment_car_list" >
         <action
-            android:id="@+id/action_bookList_to_bookInfo"
-            app:destination="@id/bookInfo" />
+            android:id="@+id/action_carList_to_addCar"
+            app:destination="@id/addCar" />
         <action
-            android:id="@+id/action_bookList_to_addBook"
-            app:destination="@id/addBook" />
+            android:id="@+id/action_carList_to_carInfo"
+            app:destination="@id/carInfo" />
     </fragment>
-
     <fragment
-        android:id="@+id/bookInfo"
-        android:name="ru.anastasia.laba2.screens.bookinfo.view.BookInfo"
-        android:label="fragment_book_info"
-        tools:layout="@layout/fragment_book_info" >
+        android:id="@+id/addCar"
+        android:name="ru.anastasia.laba2.screens.addcar.view.AddCar"
+        android:label="AddCar" >
         <action
-            android:id="@+id/action_bookInfo_to_editBookInfo"
-            app:destination="@id/editBookInfo" />
-        <action
-            android:id="@+id/action_bookInfo_to_bookList"
-            app:destination="@id/bookList" />
+            android:id="@+id/action_addCar_to_carList"
+            app:destination="@id/carList" />
     </fragment>
-
     <fragment
-        android:id="@+id/editBookInfo"
-        android:name="ru.anastasia.laba2.screens.editbook.view.EditBookInfo"
-        android:label="EditBookInfo"
-        tools:layout="@layout/fragment_edit_book_info">
-        <action
-            android:id="@+id/action_editBookInfo_to_bookList"
-            app:destination="@id/bookList" />
-    </fragment>
+        android:id="@+id/editCarInfo"
+        android:name="ru.anastasia.laba2.screens.editcar.view.EditCarInfo"
+        android:label="EditCarInfo" >
 
+        <action
+            android:id="@+id/action_editCarInfo_to_carList"
+            app:destination="@id/carList" />
+    </fragment>
     <fragment
-        android:id="@+id/addBook"
-        android:name="ru.anastasia.laba2.screens.addbook.view.AddBook"
-        android:label="fragment_add_book"
-        tools:layout="@layout/fragment_add_book" >
+        android:id="@+id/carInfo"
+        android:name="ru.anastasia.laba2.screens.carinfo.view.CarInfo"
+        android:label="fragment_edit_car_info"
+        tools:layout="@layout/fragment_edit_car_info" >
         <action
-            android:id="@+id/action_addBook_to_bookList"
-            app:destination="@id/bookList" />
+            android:id="@+id/action_carInfo_to_carList"
+            app:destination="@id/carList" />
+        <action
+            android:id="@+id/action_carInfo_to_editCarInfo"
+            app:destination="@id/editCarInfo" />
     </fragment>
-
 </navigation>

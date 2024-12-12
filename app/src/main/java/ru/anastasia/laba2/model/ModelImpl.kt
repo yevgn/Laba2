@@ -1,66 +1,66 @@
 package ru.anastasia.laba2.model
 
-import ru.anastasia.laba2.constant.bookList
-import ru.anastasia.laba2.entity.Book
+import ru.anastasia.laba2.constant.carList
+import ru.anastasia.laba2.entity.Car
 import java.util.function.Predicate
 
 class ModelImpl : Model {
 
-    override fun getBook(name: String): Book? {
+    override fun getCar(name: String): Car? {
        return filterData { it.name == name}
     }
 
-    override fun getBook(id: Int): Book?{
+    override fun getCar(id: Int): Car?{
         return filterData { it.id == id}
     }
 
-    override fun getAllBooks(): MutableList<Book> {
-        return bookList.toMutableList()
+    override fun getAllCars(): MutableList<Car> {
+        return carList.toMutableList()
     }
 
-    override fun postBook(b: Book) {
-        bookList.add(b)
+    override fun postCar(b: Car) {
+        carList.add(b)
     }
 
-    override fun putBook(id: Int, b: Book) {
-        val book = filterData { it.id == id }
-        if(book!= null){
-            book.name = b.name
-            book.author = b.author
-            book.year = b.year
-            book.genre = b.genre
+    override fun putCar(id: Int, b: Car) {
+        val car = filterData { it.id == id }
+        if(car!= null){
+            car.name = b.name
+            car.engineVolume = b.engineVolume
+            car.speed = b.speed
+            car.year = b.year
         }
     }
 
-    override fun putBook(name: String, b: Book) {
-        val book = filterData { it.name == name }
-        if(book!= null){
-            book.name = b.name
-            book.author = b.author
-            book.year = b.year
-            book.genre = b.genre
+    override fun putCar(name: String, b: Car) {
+        val car = filterData { it.name == name }
+        if(car!= null){
+            car.name = b.name
+            car.engineVolume = b.engineVolume
+            car.speed = b.speed
+            car.year = b.year
         }
     }
 
-    override fun deleteBook(id: Int) {
-        val book = filterData { it.id == id}
-        if(book!=null){
-            bookList.remove(book)
+    override fun deleteCar(id: Int) {
+        val car = filterData { it.id == id}
+        if(car!=null){
+            carList.remove(car)
         }
     }
 
-    override fun deleteBook(name: String) {
-        val book = filterData { it.name == name}
-        if(book!=null){
-            bookList.remove(book)
+    override fun deleteCar(name: String) {
+        val car = filterData { it.name == name}
+        if(car!=null){
+            carList.remove(car)
         }
     }
 
-    override fun deleteBook(b: Book) {
-        bookList.remove(b)
+    override fun deleteCar(b: Car) {
+        carList.remove(b)
     }
 
-    private fun filterData(filter: Predicate<Book>): Book? {
-        return bookList.stream().filter(filter).findAny().orElse(null)
+    private fun filterData(filter: Predicate<Car>): Car? {
+        return carList.stream().filter(filter).findAny().orElse(null)
     }
 }

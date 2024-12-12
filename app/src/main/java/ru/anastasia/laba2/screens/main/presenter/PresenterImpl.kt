@@ -14,7 +14,7 @@ class PresenterImpl(
 
     override fun onBottomNavigationViewClick(item : MenuItem) {
         if (item.itemId == R.id.home_page_item) {
-            MAIN.navController.navigate(R.id.bookList)
+            MAIN.navController.navigate(R.id.carList)
         }
     }
 
