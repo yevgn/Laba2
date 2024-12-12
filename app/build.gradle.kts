@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "ru.antonov.laba2"
+    namespace = "ru.anastasia.laba2"
     compileSdk = 34
 
     buildFeatures{
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "ru.antonov.laba2"
+        applicationId = "ru.anastasia.laba2"
         minSdk = 34
         targetSdk = 34
         versionCode = 1

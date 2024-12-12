@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/bookList"
-        android:name="ru.antonov.laba2.screens.booklist.view.BookList"
+        android:name="ru.anastasia.laba2.screens.booklist.view.BookList"
         android:label="fragment_book_list"
         tools:layout="@layout/fragment_book_list" >
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/bookInfo"
-        android:name="ru.antonov.laba2.screens.bookinfo.view.BookInfo"
+        android:name="ru.anastasia.laba2.screens.bookinfo.view.BookInfo"
         android:label="fragment_book_info"
         tools:layout="@layout/fragment_book_info" >
         <action
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/editBookInfo"
-        android:name="ru.antonov.laba2.screens.editbook.view.EditBookInfo"
+        android:name="ru.anastasia.laba2.screens.editbook.view.EditBookInfo"
         android:label="EditBookInfo"
         tools:layout="@layout/fragment_edit_book_info">
         <action
@@ -43,7 +43,7 @@
 
     <fragment
         android:id="@+id/addBook"
-        android:name="ru.antonov.laba2.screens.addbook.view.AddBook"
+        android:name="ru.anastasia.laba2.screens.addbook.view.AddBook"
         android:label="fragment_add_book"
         tools:layout="@layout/fragment_add_book" >
         <action

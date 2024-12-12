@@ -22,8 +22,6 @@
         android:layout_height="match_parent"
         android:background="@color/background"
         android:layout_below="@id/add_book_button">
-
-
     </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>
